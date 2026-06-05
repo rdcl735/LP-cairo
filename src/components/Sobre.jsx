@@ -7,12 +7,30 @@ const Sobre = () => {
     <section id="sobre" className="section">
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="sobre-grid">
-          
+          {/* Left: Photo */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            style={{ position: 'relative' }}
+          >
+            <div style={{ position: 'relative', borderRadius: '2rem', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', aspectRatio: '4/5' }}>
+              <img 
+                src="/carolina.jpg" 
+                alt="Carolina Cruz" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)' }}></div>
+            </div>
+          </motion.div>
+
+          {/* Right: Text and Badges */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--accent-black)' }}>
               Conheça <span style={{ color: 'var(--primary-blue)' }}>Carolina Cruz</span>
@@ -56,31 +74,6 @@ const Sobre = () => {
             </div>
           </motion.div>
 
-          {/* Timeline */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--glass-border)' }}
-          >
-            <div style={{ position: 'relative', marginBottom: '3rem' }}>
-              <div style={{ position: 'absolute', left: '-2.4rem', top: '0', width: '1rem', height: '1rem', borderRadius: '50%', background: 'var(--primary-blue)', border: '4px solid var(--bg-primary)' }}></div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent-black)', marginBottom: '0.5rem' }}>Início da Carreira</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Imersão em escritórios de contabilidade, construindo uma base sólida em rotinas fiscais.</p>
-            </div>
-            
-            <div style={{ position: 'relative', marginBottom: '3rem' }}>
-              <div style={{ position: 'absolute', left: '-2.4rem', top: '0', width: '1rem', height: '1rem', borderRadius: '50%', background: 'var(--primary-blue)', border: '4px solid var(--bg-primary)' }}></div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent-black)', marginBottom: '0.5rem' }}>Especialização Técnica</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Foco no fechamento contábil e regularização de empresas e pessoas físicas.</p>
-            </div>
-            
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '-2.4rem', top: '0', width: '1rem', height: '1rem', borderRadius: '50%', background: 'var(--primary-blue)', border: '4px solid var(--bg-primary)', boxShadow: '0 0 10px rgba(37,99,235,0.5)' }}></div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent-black)', marginBottom: '0.5rem' }}>Atendimento Humanizado</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Hoje, oferecendo soluções com transparência, proximidade e agilidade para clientes de todo o Brasil.</p>
-            </div>
           </motion.div>
 
         </div>

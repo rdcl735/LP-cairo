@@ -79,8 +79,27 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          style={{ marginBottom: '1.5rem' }}
+          style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
+          {/* Elegante Avatar Badge */}
+          <motion.div
+            variants={wordVariants}
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '12px', 
+              background: 'rgba(255,255,255,0.1)', 
+              backdropFilter: 'blur(12px)', 
+              padding: '6px 20px 6px 6px', 
+              borderRadius: '50px',
+              border: '1px solid rgba(255,255,255,0.2)',
+              marginBottom: '2rem'
+            }}
+          >
+            <img src="/carolina.jpg" alt="Carolina Cruz" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
+            <span style={{ color: 'white', fontWeight: 500, fontSize: '14px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Carolina Cruz</span>
+          </motion.div>
+
           <h1 className="hero-headline">
             {/* Line 1 */}
             <div style={{ display: 'inline-block' }}>
