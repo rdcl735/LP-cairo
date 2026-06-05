@@ -34,6 +34,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.hero-internal-container {
+  position: sticky;
+  top: 20px; /* offset for the frame padding */
+  border-radius: 48px;
+  overflow: hidden;
+  height: calc(100vh - 120px);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+
+.page-content {
+  background-color: var(--bg-primary);
+  position: relative;
+  z-index: 10;
+  border-radius: 48px 48px 0 0;
+  padding-top: 4rem;
+  margin-top: 4rem;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.05); /* Soft shadow for depth */
+}
+
 .app-external-frame {
   background-color: var(--bg-primary);
   padding: 20px;
