@@ -29,8 +29,8 @@ const CtaFinal = () => {
             <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, marginBottom: '1.5rem', color: 'white', letterSpacing: '-0.02em' }}>
               Resolva sua situação fiscal e contábil com segurança.
             </h2>
-            <p style={{ fontSize: '1.25rem', opacity: 0.9, marginBottom: '3rem' }}>
-              Fale agora com Carolina Cruz e receba orientação especializada.
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '2.5rem' }}>
+              Fale agora com a equipe da Cairo Contabilidade e receba orientação especializada.
             </p>
             
             <motion.a 

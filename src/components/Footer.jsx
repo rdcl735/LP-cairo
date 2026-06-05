@@ -9,7 +9,7 @@ const Footer = () => {
           
           <div>
             <div style={{ fontWeight: 700, fontSize: '1.5rem', color: 'var(--accent-black)', marginBottom: '1rem' }}>
-              Carolina Cruz<span style={{ color: 'var(--primary-blue)' }}>.</span>
+              Cairo Contabilidade<span style={{ color: 'var(--primary-blue)' }}>.</span>
             </div>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', maxWidth: '300px' }}>
               Contabilidade sem burocracia para você focar no que realmente importa.
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '2rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-          <p>&copy; {new Date().getFullYear()} Carolina Cruz Contabilidade. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Cairo Contabilidade. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -15,7 +15,7 @@ const Navbar = () => {
     }}>
       {/* Left: Brand */}
       <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: 'var(--accent-black)' }}>
-        Carolina Cruz
+        Cairo Contabilidade
       </div>
 
       {/* Center: Nav links */}

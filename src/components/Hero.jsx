@@ -96,8 +96,8 @@ const Hero = () => {
               marginBottom: '2rem'
             }}
           >
-            <img src="/carolina.jpg" alt="Carolina Cruz" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
-            <span style={{ color: 'white', fontWeight: 500, fontSize: '14px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Carolina Cruz</span>
+            <img src="/carolina.jpg" alt="Cairo Contabilidade" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
+            <span style={{ color: 'white', fontWeight: 500, fontSize: '14px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Cairo Contabilidade</span>
           </motion.div>
 
           <h1 className="hero-headline">
