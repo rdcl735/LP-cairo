@@ -1,60 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { MessageCircle, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`navbar ${scrolled ? 'glass' : ''}`}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        padding: '1rem 0',
-        transition: 'all 0.3s ease',
-        backgroundColor: scrolled ? 'var(--glass-bg)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--glass-border)' : '1px solid transparent'
-      }}
-    >
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--accent-black)' }}>
-          Carolina Cruz<span style={{ color: 'var(--primary-blue)' }}>.</span>
-        </div>
-
-        {/* Desktop Nav */}
-        <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
-          <a href="#servicos" style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Serviços</a>
-          <a href="#sobre" style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Sobre</a>
-          <a href="#diferenciais" style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Diferenciais</a>
-          <a href="#faq" style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>FAQ</a>
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            <MessageCircle size={18} />
-            Falar no WhatsApp
-          </a>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{ background: 'none', border: 'none', display: 'none' }}>
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
+    <header style={{ 
+      display: 'flex', 
+      justifyContent: 'space-between', 
+      alignItems: 'center', 
+      padding: '1rem 2rem',
+      backgroundColor: 'var(--bg-primary)',
+      zIndex: 100
+    }}>
+      {/* Left: Brand */}
+      <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: 'var(--accent-black)' }}>
+        Carolina Cruz
       </div>
+
+      {/* Center: Nav links */}
+      <nav className="desktop-nav" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
+        <a href="#servicos" style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#6B7280', transition: 'color 0.2s' }}>Serviços</a>
+        <a href="#sobre" style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#6B7280', transition: 'color 0.2s' }}>Sobre</a>
+        <a href="#diferenciais" style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#6B7280', transition: 'color 0.2s' }}>Diferenciais</a>
+        <a href="#faq" style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#6B7280', transition: 'color 0.2s' }}>FAQ</a>
+      </nav>
+
+      {/* Right: Black pill button */}
+      <div className="desktop-nav">
+        <a 
+          href="https://wa.me/5511999999999" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          style={{ 
+            backgroundColor: 'var(--accent-black)', 
+            color: 'white', 
+            padding: '10px 24px', 
+            borderRadius: '9999px', 
+            fontFamily: 'Inter, sans-serif', 
+            fontSize: '14px', 
+            fontWeight: 500,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            display: 'inline-block',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+          }}
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      {/* Mobile Toggle */}
+      <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{ background: 'none', border: 'none', display: 'none', cursor: 'pointer', color: 'var(--accent-black)' }}>
+        {mobileMenuOpen ? <X /> : <Menu />}
+      </button>
 
       <style>{`
         @media (max-width: 768px) {
@@ -62,7 +68,7 @@ const Navbar = () => {
           .mobile-toggle { display: block !important; }
         }
       `}</style>
-    </motion.header>
+    </header>
   );
 };
 

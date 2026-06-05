@@ -30,6 +30,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.app-external-frame {
+  background-color: var(--bg-primary);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .app-external-frame {
+    padding: 10px;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--accent-black);
   line-height: 1.2;

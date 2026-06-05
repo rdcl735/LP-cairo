@@ -14,19 +14,22 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="app-container">
+    <div className="app-external-frame">
       <Navbar />
       <main>
         <Hero />
-        <Problemas />
-        <Servicos />
-        <Sobre />
-        <Diferenciais />
-        <ComoFunciona />
-        <Resultados />
-        <Depoimentos />
-        <Faq />
-        <CtaFinal />
+        {/* We keep the rest of the content below the hero */}
+        <div className="page-content">
+          <Problemas />
+          <Servicos />
+          <Sobre />
+          <Diferenciais />
+          <ComoFunciona />
+          <Resultados />
+          <Depoimentos />
+          <Faq />
+          <CtaFinal />
+        </div>
       </main>
       <Footer />
     </div>
