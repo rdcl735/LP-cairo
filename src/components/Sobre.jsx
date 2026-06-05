@@ -74,8 +74,6 @@ const Sobre = () => {
             </div>
           </motion.div>
 
-          </motion.div>
-
         </div>
       </div>
       <style>{`
